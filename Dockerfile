@@ -24,7 +24,7 @@ RUN apt-get update \
   && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN echo -e $'\n\
-export PS1="\e[1;33m\n\$ \e[0;37;40m"\n\
+export PS1="\[\e[1;33m\]\$ \[\e[m\]"\n\
 
 alias vi='vim'\n\
 set -o vi\n\
