@@ -32,6 +32,8 @@ RUN apt-get update \
   && update-locale LANG=ja_JP.UTF-8 \
   ;
 
+RUN sh -c "yes | unminimize"
+
 RUN echo -e $'\n\
 export PS1="\n\[\e[1;33m\]\$ \[\e[m\]"\n\
 
