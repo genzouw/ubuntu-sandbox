@@ -2,26 +2,35 @@ FROM ubuntu:21.04
 
 LABEL maintainer "genzouw <genzouw@gmail.com>"
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ Asia/Tokyo
+ENV LANG ja_JP.UTF-8
+
 RUN apt-get update \
-  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+  && apt -y install \
     --no-install-recommends \
     gcc \
     git \
     golang \
     libicu-dev \
+    liblua5.3-dev \
     libpq-dev \
     locales \
-    liblua5.3-dev \
     make \
+    man \
+    mercurial \
     procps \
     python3-dev \
+    language-pack-ja \
     unixodbc-dev \
     unzip \
     vim \
     w3m \
     zlib1g-dev \
   && apt-get clean \
-  && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+  && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
+  && update-locale LANG=ja_JP.UTF-8 \
+  ;
 
 RUN echo -e $'\n\
 export PS1="\n\[\e[1;33m\]\$ \[\e[m\]"\n\
