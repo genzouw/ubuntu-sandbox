@@ -34,7 +34,7 @@ RUN apt-get update \
 
 RUN sh -c "yes | unminimize"
 
-RUN echo -e $'\n\
+RUN echo '\n\
 export PS1="\n\[\e[1;33m\]\$ \[\e[m\]"\n\
 
 alias vi='vim'\n\
