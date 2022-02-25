@@ -10,8 +10,10 @@ RUN apt-get update \
   && apt -y install \
     --no-install-recommends \
     gcc \
+    curl \
     git \
     golang \
+    language-pack-ja \
     libicu-dev \
     liblua5.3-dev \
     libpq-dev \
@@ -21,7 +23,6 @@ RUN apt-get update \
     mercurial \
     procps \
     python3-dev \
-    language-pack-ja \
     unixodbc-dev \
     unzip \
     vim \
