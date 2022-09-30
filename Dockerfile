@@ -5,6 +5,7 @@ LABEL maintainer "genzouw <genzouw@gmail.com>"
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Asia/Tokyo
 ENV LANG ja_JP.UTF-8
+ENV MANPAGER less
 
 RUN apt-get update \
   && apt -y install \
@@ -28,6 +29,7 @@ RUN apt-get update \
     vim \
     w3m \
     zlib1g-dev \
+    less \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
   && update-locale LANG=ja_JP.UTF-8 \
