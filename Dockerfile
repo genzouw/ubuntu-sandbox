@@ -30,9 +30,11 @@ RUN apt-get update \
     w3m \
     zlib1g-dev \
     less \
+  && apt reinstall ca-certificates -y \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
   && update-locale LANG=ja_JP.UTF-8 \
+  && update-ca-certificates \
   ;
 
 RUN sh -c "yes | unminimize"
