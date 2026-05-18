@@ -1,0 +1,4 @@
+language: "ja"
+tone_instruction: "丁寧な日本語（敬語）で、技術的に詳細なレビューを行ってください。"
+reviews:
+  poem: false
