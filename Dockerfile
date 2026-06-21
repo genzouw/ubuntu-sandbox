@@ -8,7 +8,7 @@ ENV LANG ja_JP.UTF-8
 ENV MANPAGER less
 
 RUN apt-get update \
-  && apt -y install \
+  && apt-get -y install \
     --no-install-recommends \
     gcc \
     curl \
@@ -30,19 +30,18 @@ RUN apt-get update \
     w3m \
     zlib1g-dev \
     less \
-  && apt reinstall ca-certificates -y \
+  && apt-get install --reinstall --no-install-recommends ca-certificates -y \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* \
   && update-locale LANG=ja_JP.UTF-8 \
   && update-ca-certificates \
   ;
 
-RUN sh -c "yes | unminimize"
-
-RUN echo '\n\
+RUN sh -c "yes | unminimize" \
+  && echo '\n\
 export PS1="\n\[\e[1;33m\]\$ \[\e[m\]"\n\
 
-alias vi='vim'\n\
+alias vi=vim\n\
 set -o vi\n\
 \n\
 {\n\
