@@ -1,0 +1,8 @@
+# Trivy ignore file
+#
+# AVD-DS-0002 (DS-0002): "Image user should not be 'root'"
+# 本リポジトリは対話的に利用する開発用サンドボックスであり、
+# /root/.bashrc の整備や ENTRYPOINT ["/bin/bash"] による root シェル起動が
+# 意図的な設計である。非rootユーザー化はサンドボックスの用途を損なうため、
+# DS-0002 の指摘は意図的に許容する。
+AVD-DS-0002
