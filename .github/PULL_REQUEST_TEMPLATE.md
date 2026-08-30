@@ -45,7 +45,7 @@
 
 ## コスト方針のセルフチェック (公開 OSS)
 
-- [ ] LLM プロバイダや従量課金 API のキー (`GEMINI_API_KEY` / `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` / `TAVILY_API_KEY` 等) を GitHub Secrets へ追加していない（変更差分に既存ファイルの変更を含めて確認した）
+- [ ] LLM プロバイダや従量課金 API のキー (`GEMINI_API_KEY` / `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` / `TAVILY_API_KEY` 等) を GitHub Secrets へ追加しておらず、課金 API キーを `secrets.*` から参照する記述も変更差分に含めていない（既存ファイルの変更を含めて確認した）
 - [ ] 追加した SaaS / GitHub App / Action は公開 OSS リポジトリで完全無料であり、その根拠 URL と無料で利用できる条件の引用を本文に記載した（外部サービスを追加していない場合はチェック可）
 - [ ] `.github/workflows/` 配下の既存ワークフローと機能が重複していないことを確認した
 - [ ] リポジトリオーナーへ新規 Secret の登録を依頼していない
